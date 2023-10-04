@@ -4,7 +4,7 @@ import React, { Fragment } from "react";
 // funcion del componente
 const MiComponente = () => {
     return (
-        <Fragment>
+        <>
             <hr />
             <h2> Creando componente</h2>
             <p> este es mi primer componente</p>
@@ -19,7 +19,7 @@ const MiComponente = () => {
                     Vue
                 </li>
             </ul>
-        </Fragment>
+        </>
     );
 }
 
