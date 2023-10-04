@@ -12,9 +12,11 @@ const MiComponente = () => {
         apellidos: "Julcamoro",
         web: web
     }
+
+    console.log(usuario)
+
     return (
         <div className="mi-componente">
-            <hr />
             <h2> Creando componente</h2>
             <h3>Datos del usuario:</h3>
             <ul>
