@@ -5,3 +5,4 @@
     - npm start
 
 >Crear componente
+    rafc :: comando para que dentro del componente, se setee el codigo
