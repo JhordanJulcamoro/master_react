@@ -5,6 +5,13 @@ import { SegundoComponente } from './SegundoComponente';
 import { TercerComponente } from './TercerComponente';
 
 function App() {
+  const ficha_medica = {
+    altura:"187cm",
+    grupo:"O+",
+    estado:"Bueno",
+    alergias:"Aresetemina"
+
+  }
   return (
     <div className="App">
       <header className="App-header">
@@ -18,7 +25,8 @@ function App() {
           <hr />
           <TercerComponente 
             nombre="Jhordan"
-            apellido="Julcamoro" />
+            apellido="Julcamoro" 
+            ficha= {ficha_medica} />
           <hr />
           <SegundoComponente />
           <hr />
