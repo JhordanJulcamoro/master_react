@@ -1,0 +1,6 @@
+>Crear proyecto
+    - npx create-react-app primeros_pasos   
+
+>Ejecutar proyecto
+    - npm start
+
