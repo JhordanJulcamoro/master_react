@@ -12,7 +12,7 @@ function App() {
         </p>
 
         {/* Cargando mi primer componente */}
-        <MiComponente></MiComponente>
+        <MiComponente/>
         
       </header>
     </div>
