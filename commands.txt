@@ -4,3 +4,4 @@
 >Ejecutar proyecto
     - npm start
 
+>Crear componente
