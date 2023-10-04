@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import MiComponente from './MiComponente';
 import { SegundoComponente } from './SegundoComponente';
+import { TercerComponente } from './TercerComponente';
 
 function App() {
   return (
@@ -14,6 +15,10 @@ function App() {
 
         {/* Cargando mi primer componente */}
         <div className='componente'>
+          <hr />
+          <TercerComponente 
+            nombre="Jhordan"
+            apellido="Julcamoro" />
           <hr />
           <SegundoComponente />
           <hr />

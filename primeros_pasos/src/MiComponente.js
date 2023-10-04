@@ -13,7 +13,7 @@ const MiComponente = () => {
         web: web
     }
 
-    console.log(usuario)
+    // console.log(usuario)
 
     return (
         <div className="mi-componente">
