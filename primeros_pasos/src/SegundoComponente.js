@@ -15,15 +15,19 @@ export const SegundoComponente = () => {
             <h1> Listado de libros</h1>
 
             {libros.length >= 1 ?
-                <ul>
-                    {
-                        libros.map((libro, indice) => {
-                            return <li key={indice}>{libro}</li>
-                        })
-                    }
-                </ul>
-                : 
-                <p>No hay libros disponibles</p>
+                (
+                    <ul>
+                        {
+                            libros.map((libro, indice) => {
+                                return <li key={indice}>{libro}</li>
+                            })
+                        }
+                    </ul>
+                )
+                :
+                (
+                    <p>No hay libros disponibles</p>
+                )
             }
         </div>
     )
