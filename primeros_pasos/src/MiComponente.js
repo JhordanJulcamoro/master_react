@@ -1,5 +1,5 @@
 // Importar modulos de react / dependencias
-import React, { Fragment } from "react";
+import React from "react";
 
 // funcion del componente
 const MiComponente = () => {
