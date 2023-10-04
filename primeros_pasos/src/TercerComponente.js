@@ -1,16 +1,15 @@
 import React from 'react'
 
-export const TercerComponente = (props) => {
-    console.log(props);
+export const TercerComponente = ({nombre,apellido,ficha}) => {
 
   return (
     <div>
         <h1>Comunicacion entre componentes</h1>
         <ul>
-            <li>{props.nombre}</li>
-            <li>{props.apellido}</li>
-            <li>{props.ficha.altura}</li>
-            <li>{props.ficha.grupo}</li>
+            <li>{nombre}</li>
+            <li>{apellido}</li>
+            <li>{ficha.altura}</li>
+            <li>{ficha.grupo}</li>
         </ul>
     </div>
   )
