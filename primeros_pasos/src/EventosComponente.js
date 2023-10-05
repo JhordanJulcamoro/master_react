@@ -2,8 +2,8 @@ import React from 'react'
 
 export const EventosComponente = () => {
 
-  const hasDadoClick = () => {
-    alert('Has Dado Click');
+  const hasDadoClick = (e, nombre) => {
+    alert('Has Dado Click: ' + nombre);
   }
 
   return (
@@ -12,7 +12,7 @@ export const EventosComponente = () => {
 
         {/* Evento click */}
         <h3>Evento onclick:: </h3>
-        <button onClick={hasDadoClick}>Dame Click</button>
+        <button onClick={e => hasDadoClick(e,"Jhordan")}>Dame Click</button>
     </div>
   )
 }
