@@ -7,7 +7,8 @@ export const EventosComponente = () => {
 
         {/* Evento click */}
         <h3>Evento onclick:: </h3>
-        <button onClick={() => {
+        <button onClick={(e) => {
+            console.log(e);
             console.log("Hola soy un evento click")
         }}>Dame Click</button>
     </div>
