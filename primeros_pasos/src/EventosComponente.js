@@ -17,6 +17,10 @@ export const EventosComponente = () => {
   const hasSalido = (e,accion) =>{ 
     alert(`has ${accion} de la caja con el mouse!!`)
   }
+
+  const estasDentro = e =>{
+    alert("Estas dentro del input, introduce tu nombre");
+  }
   return (
     <div>
       <h1>Eventos en React</h1>
@@ -40,6 +44,10 @@ export const EventosComponente = () => {
         {/* Evento mouse enter */}
         Pasa por encima!!
       </div>
+
+      <p> 
+        <input type='text' onFocus={estasDentro} placeholder='Introduce tu nombre'/>
+      </p>
 
     </div>
   )
