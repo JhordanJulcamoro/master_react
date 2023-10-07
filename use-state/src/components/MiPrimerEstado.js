@@ -22,7 +22,7 @@ export const MiPrimerEstado = () => {
     <div>
         <h3>Componente: 1er estado </h3>
 
-        <strong> {nombre} </strong>
+        <strong className='label'> {nombre} </strong>
         &nbsp;
         <button onClick={e => cambiarNombre(e,"Zuar")}>Cambiar nombre por Zuar</button>
         &nbsp;
