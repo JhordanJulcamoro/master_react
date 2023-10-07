@@ -17,8 +17,12 @@ export const EjercicIoComponent = ({year}) => {
     // }
 
     const cambiarAnho = (e) => {
-        let dato = e.target.value;
-        setYearNow (dato);
+        let dato = parseInt(e.target.value);
+        if(Number.isInteger(dato)){
+            setYearNow (dato);
+        }else{
+            setYearNow (year);
+        }
     }
 
   return (
