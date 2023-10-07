@@ -13,6 +13,10 @@ export const PruebasComponet = () => {
     console.log('Has cargado el componente');
   }, [])
 
+  useEffect(() => {
+    console.log('Has modificado el usuario');
+  }, [usuario])
+
   const cambiarFecha = e => {
     setFecha(Date.now())
   }
