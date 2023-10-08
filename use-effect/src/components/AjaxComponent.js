@@ -34,10 +34,28 @@ export const AjaxComponent = () => {
         ])
     }
 
-    useEffect(()=>{
+    const getUsuariosAjaxParams = () => {
+        fetch("https://reqres.in/api/users?page=2")
+            .then(respuesta => respuesta.json())
+            .then(
+                resultado_final => {
+                    setUsuarios(resultado_final.data);
+                },
+                error => {
+                    console.log(error);
+                }
+            )
+    }
+
+    useEffect(() => {
         //cada vez que se carga el componente, se llena el array
-        getUsuariosEstaticos();
-    },[]);
+        // getUsuariosEstaticos();
+
+        //get peticion AJAX usuarios
+        getUsuariosAjaxParams();
+
+
+    }, []);
 
     //mediante una promesa   
     return (
