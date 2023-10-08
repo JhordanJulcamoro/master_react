@@ -1,4 +1,5 @@
 import React, {useState,useEffect} from 'react'
+import { AvisoComponent } from './AvisoComponent';
 
 export const PruebasComponet = () => {
   const [usuario,setUsuario] = useState('Jhordan Julcamoro');
@@ -36,6 +37,9 @@ export const PruebasComponet = () => {
           placeholder='Cambia el nombre'/>
         <button onClick={cambiarFecha}>Cambiar fecha</button>
       </p>
+
+      {/* {contador >= 20 && "Hemos superado el 20 en el contador"} */}
+      {usuario === 'JHORDAN' && <AvisoComponent/>}
     </div>
   )
 }
