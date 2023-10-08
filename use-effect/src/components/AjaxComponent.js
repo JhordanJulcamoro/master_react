@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 
 export const AjaxComponent = () => {
     const [usuarios, setUsuarios] = useState([]);
+    const [cargando, setCargando] = useState(true);
 
     const getUsuariosEstaticos = () => {
         setUsuarios([
@@ -48,9 +49,13 @@ export const AjaxComponent = () => {
     }
 
     const getUsuariosAjazAsyncAwait = async () => {
-        const peticion = await fetch('https://reqres.in/api/users?page=2');
-        const {data} = await peticion.json();
-        setUsuarios(data);
+        //agregando delay de 2s
+        setTimeout(async () => {
+            const peticion = await fetch('https://reqres.in/api/users?page=2');
+            const { data } = await peticion.json();
+            setUsuarios(data);
+            setCargando(false);
+        }, 2000)
     }
 
     useEffect(() => {
@@ -63,17 +68,31 @@ export const AjaxComponent = () => {
         getUsuariosAjazAsyncAwait();
     }, []);
 
-    //mediante una promesa   
-    return (
-        <div>
-            <h1>Listado de usuarios via AJAX</h1>
-            <ol className='usuarios'>
-                {
-                    usuarios.map(usuarios => {
-                        return <li key={usuarios.id}>{usuarios.first_name} {usuarios.last_name}</li>
-                    })
-                }
-            </ol>
-        </div>
-    )
+    //mediante una promesa 
+
+
+    if (cargando === true) {
+        //cuando esta todo cargando
+        return (<div className='cargando'>
+            cargando datos...
+        </div>)
+    } else {
+
+        //cuando deja de cargar los datos
+        return (
+            <div>
+                <h1>Listado de usuarios via AJAX</h1>
+                <ol className='usuarios'>
+                    {
+                        usuarios.map(usuarios => {
+                            return (<li key={usuarios.id}>
+                                <img src={usuarios.avatar} alt={usuarios.name} width="40px"/>
+                                &nbsp;
+                                {usuarios.first_name} {usuarios.last_name}</li>)
+                        })
+                    }
+                </ol>
+            </div>
+        )
+    }
 }
