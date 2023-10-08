@@ -47,14 +47,20 @@ export const AjaxComponent = () => {
             )
     }
 
+    const getUsuariosAjazAsyncAwait = async () => {
+        const peticion = await fetch('https://reqres.in/api/users?page=2');
+        const {data} = await peticion.json();
+        setUsuarios(data);
+    }
+
     useEffect(() => {
         //cada vez que se carga el componente, se llena el array
         // getUsuariosEstaticos();
 
         //get peticion AJAX usuarios
-        getUsuariosAjaxParams();
+        // getUsuariosAjaxParams();
 
-
+        getUsuariosAjazAsyncAwait();
     }, []);
 
     //mediante una promesa   
