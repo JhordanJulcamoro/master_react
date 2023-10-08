@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react'
 export const AjaxComponent = () => {
     const [usuarios, setUsuarios] = useState([]);
     const [cargando, setCargando] = useState(true);
+    const [errores, setErrores] = useState("");
 
     const getUsuariosEstaticos = () => {
         setUsuarios([
@@ -51,10 +52,16 @@ export const AjaxComponent = () => {
     const getUsuariosAjazAsyncAwait = async () => {
         //agregando delay de 2s
         setTimeout(async () => {
-            const peticion = await fetch('https://reqres.in/api/users?page=2');
-            const { data } = await peticion.json();
-            setUsuarios(data);
-            setCargando(false);
+            try {
+                const peticion = await fetch('https://reqres.in/api/users?page=2');
+                const { data } = await peticion.json();
+                setUsuarios(data);
+                setCargando(false);
+            } catch (error) {
+                console.log("Error " ,error.message);
+                setErrores(error.message);
+            }
+
         }, 2000)
     }
 
@@ -71,12 +78,16 @@ export const AjaxComponent = () => {
     //mediante una promesa 
 
 
-    if (cargando === true) {
+    if (errores!== ""){
+        return (<div className='cargando'>
+            {errores.message}
+        </div>)
+    }else if (cargando === true) {
         //cuando esta todo cargando
         return (<div className='cargando'>
             cargando datos...
         </div>)
-    } else {
+    } else if (cargando === false && errores === "") {
 
         //cuando deja de cargar los datos
         return (
@@ -86,7 +97,7 @@ export const AjaxComponent = () => {
                     {
                         usuarios.map(usuarios => {
                             return (<li key={usuarios.id}>
-                                <img src={usuarios.avatar} alt={usuarios.name} width="40px"/>
+                                <img src={usuarios.avatar} alt={usuarios.name} width="40px" />
                                 &nbsp;
                                 {usuarios.first_name} {usuarios.last_name}</li>)
                         })
