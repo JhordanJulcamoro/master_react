@@ -3,6 +3,7 @@ import React, {useState,useEffect} from 'react'
 export const PruebasComponet = () => {
   const [usuario,setUsuario] = useState('Jhordan Julcamoro');
   const [fecha, setFecha] = useState('01-01-1997');
+  const [contador, setContador] = useState(0);
 
   const modUsuario = e => {
     setUsuario(e.target.value);
@@ -14,8 +15,9 @@ export const PruebasComponet = () => {
   }, [])
 
   useEffect(() => {
-    console.log('Has modificado el usuario');
-  }, [usuario])
+    setContador(contador + 1);
+    console.log('Has modificado el usuario ', contador);
+  }, [usuario,fecha]) //se detectan 10 cambios o 10 veces el useEffect, se cambia el color de la etiqueta
 
   const cambiarFecha = e => {
     setFecha(Date.now())
@@ -25,7 +27,7 @@ export const PruebasComponet = () => {
     <div>
       <h1>El efecto - hook useEffect</h1>
 
-      <strong>{usuario}</strong>
+      <strong className={contador>=10? 'label-green':'label'}>{usuario}</strong>
       
       <strong> {fecha}</strong>
       <p>
