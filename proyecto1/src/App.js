@@ -1,3 +1,6 @@
+import { Buscador } from "./components/Buscador";
+import { Crear } from "./components/Crear";
+import { Listado } from "./components/Listado";
 
 function App() {
   return (
@@ -25,63 +28,20 @@ function App() {
       <section id="content" className="content">
 
         {/* <!--aqui van las peliculas--> */}
-        <article className="peli-item">
-          <h3 className="title">Desarrollo web</h3>
-          <p className="description">victorroblesweb.es</p>
-
-          <button className="edit">Editar</button>
-          <button className="delete">Borrar</button>
-        </article>
-
-        <article className="peli-item">
-          <h3 className="title">Desarrollo web</h3>
-          <p className="description">victorroblesweb.es</p>
-
-          <button className="edit">Editar</button>
-          <button className="delete">Borrar</button>
-        </article>
-
-        <article className="peli-item">
-          <h3 className="title">Desarrollo web</h3>
-          <p className="description">victorroblesweb.es</p>
-
-          <button className="edit">Editar</button>
-          <button className="delete">Borrar</button>
-        </article>
-
-        <article className="peli-item">
-          <h3 className="title">Desarrollo web</h3>
-          <p className="description">victorroblesweb.es</p>
-
-          <button className="edit">Editar</button>
-          <button className="delete">Borrar</button>
-        </article>
+        <Listado></Listado>
 
       </section>
 
       {/* <!--Barra lateral--> */}
       <aside className="lateral">
-        <div className="search">
-          <h3 className="title">Buscador</h3>
-          <form>
-            <input type="text" id="search_field" />
-            <button id="search">Buscar</button>
-          </form>
-        </div>
+        <Buscador></Buscador>
 
-        <div className="add">
-          <h3 className="title">Añadir pelicula</h3>
-          <form>
-            <input type="text" id="title" placeholder="Titulo" />
-            <textarea id="description" placeholder="Descripción"></textarea>
-            <input type="submit" id="save" value="Guardar" />
-          </form>
-        </div>
+       <Crear></Crear>
       </aside>
 
       {/* <!--Pie de página--> */}
       <footer className="footer">
-        &copy; Máster en React - <a href="https://victorroblesweb.es">victorroblesweb.es</a>
+        &copy; Máster en React - <a href="https://jhordanjulcamoro.com">julhua.com</a>
       </footer>
 
     </div>
